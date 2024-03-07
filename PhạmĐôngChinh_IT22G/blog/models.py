@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Baiviet(models.Model):
+class Blog(models.Model):
     title = models.CharField(max_length=100)
     categoryBlog = models.CharField(max_length=32)
     content = models.TextField()
