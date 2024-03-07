@@ -1,0 +1,42 @@
+{% extends "layout/base.html" %} {% block title %} Blogs {% endblock %}
+ {% block content %} 
+ {% comment %} get fillter blog {% endcomment %}
+ {% if categoryBlog %}
+<div class="blogs-category">
+  <div class="container-blogs-category">
+    {% for category in categoryBlog %}
+    <a href="{{ category.categoryBlog }}" class="blogs-category-text"
+      >{{ category.categoryBlog }}</a
+    >
+    {% endfor %}
+  </div>
+</div>
+{% endif %} {% if dataBlog %}
+<div class="post container">
+  {% for item in dataBlog %}
+  <div class="post-box news">
+    {% if item.image %}
+    <img src="{{ item.image.url }}" class="post-img" />
+    {% endif %}
+    <h2 class="category">{{ item.categoryBlog }}</h2>
+    <span class="post-date">{{ item.date|date:"d F Y" }}</span>
+    <a href="" class="post-title">{{ item.title }}</a>
+    <p class="post-description">{{ item.content }}</p>
+    <div class="profile">
+      {% if item.audio %}
+      <audio controls>
+        <source src="{{ item.audio.url }}" type="audio/mpeg" />
+      </audio>
+      {% endif %}
+    </div>
+    <div class="container-profile-author">
+      <img src="{{ item.imageAuthor.url }}" class="profile-author-image" />
+      <span class="profile-name">{{ item.author }}</span>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p>No dataBlog available.</p>
+{% endif %}
+ {% endblock %}

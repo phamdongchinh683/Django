@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/basic.css' %}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>{% block title %}Layout{% endblock %}</title>
+  </head>
+  <body>
+    <div class="container-body">
+      <header>
+        <div class="navbar">
+          <a href="/">Home</a>
+          <div class="subnav">
+            <button class="subnavbtn">
+              About <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content">
+              <a href="/admin">Admin</a>
+              <a href="/blog">Blog</a>
+            </div>
+          </div>
+          <a href="/contact">Contact</a>
+          <a href="/login">Login</a>
+        </div>
+      </header>
+      <main>{% block content %}
+        {% endblock %}</main>
+      <footer>
+        <div class="footer-container">
+          <div class="sec aboutus">
+            <h2>About Us</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
+              quisquam minus quo illo numquam vel incidunt pariatur hic commodi
+              expedita tempora praesentium at iure fugiat ea, quam laborum
+              aperiam veritatis.
+            </p>
+            <ul class="sci">
+              <li>
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="sec quicklinks">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </div>
+          <div class="sec contactBx">
+            <h2>Contact Info</h2>
+            <ul class="info">
+              <li>
+                <span><i class="bx bxs-map"></i></span>
+                <span
+                  >6444 London street <br />
+                  Brighton PA 33445 <br />
+                  Uk</span
+                >
+              </li>
+              <li>
+                <span><i class="bx bx-envelope"></i></span>
+                <p>
+                  <a href="www.google.com">chinh99501@donga.edu.vn</a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+    integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+</html>
